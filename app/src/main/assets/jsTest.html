@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Carson</title>
+    <script>
+
+		 function androidCall(text){
+		     alert(text);
+		 };
+
+		   function callAndroid(){
+        // 由于对象映射，所以调用test对象等于调用Android映射的对象
+            NativeApp.showToast("调用了android的toast方法");
+         };
+
+         function finish(){
+          NativeApp.finish();
+         };
+
+         function richScan(){
+          NativeApp.richScan();
+         };
+
+         function richScanSuccess(url){
+            alert(url);
+         };
+          function wxLoginSuccess(jsonStr){
+            alert(jsonStr);
+         };
+
+         function wxPayCallback(jsonStr){
+            alert(jsonStr);
+         };
+
+         function aliPayCallback(jsonStr){
+            alert(jsonStr);
+         };
+
+         function richScanCallback(url){
+            alert(url);
+         };
+
+         function set(){
+             NativeApp.setLocalStorage('aaaa','bbbb');
+         };
+
+         function get(){
+            var value =  NativeApp.getLocalStorage('aaaa');
+            NativeApp.showToast(value);
+         };
+
+          function openOther(){
+             var url = document.getElementById("inputUrl").value;
+             window.location.href="http://"+url;
+         };
+
+
+    </script>
+</head>
+<body>
+
+<button type="button" id="button1" onclick="callAndroid()">点击按钮则调用callAndroid函数</button>
+<p>头像：<input type="file" name="file"/></p>
+<a href="tel:13764567708">移动WEB页面JS一键拨打号码咨询功能</a>
+<button type="button" id="button2" onclick="finish()">关闭当前页面</button>
+<button type="button" id="button3" onclick="richScan()">打开扫描</button>
+<div>http://<input type="text" id="inputUrl"/>
+    <button type="button" onclick="openOther()">打开新地址</button>
+</div>
+<div>
+    <button type="button" onclick="set()">设置</button>
+</div>
+<div>
+    <button type="button" onclick="get()">获取</button>
+</div>
+</body>
+</html>

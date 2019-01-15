@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">瑞达康医检</string>
+    <string name="pay_result_callback_msg" formatted="false">微信支付结果：%s</string>
+</resources>
